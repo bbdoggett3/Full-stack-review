@@ -1,20 +1,23 @@
 import React from "react";
-import Axios from "axios";
+import axios from "axios";
+import { connect } from "react-redux";
+import { logOutUser } from "../../redux/reducer";
 
 function Profile(props) {
-
-    const logout = () => {
-        Axios.delete('/auth/logout').then( () => {
-            props.history.push('/')
-        })
-    }
+  const logout = () => {
+    axios.delete("/auth/logout").then(() => {
+      props.logOutUser();
+      props.history.push("/");
+    });
+  };
 
   return (
     <div>
-      <p>This is the landing Profile</p>
-      <button onClick={ () => logout() }>Logout</button>
+      <p>Welcome {props.user.email}</p>
+      <button onClick={() => logout()}>Logout</button>
     </div>
   );
 }
 
-export default Profile;
+const mapStateToProps = (reduxState) => reduxState;
+export default connect(mapStateToProps, { logOutUser })(Profile);
