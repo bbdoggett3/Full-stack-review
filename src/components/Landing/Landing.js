@@ -35,7 +35,7 @@ class Landing extends Component {
     const { email, password } = this.state;
     return (
       <div>
-        This is the landing Component
+        
         <form onSubmit = {(event) => this.login(event)}>
             
           <input

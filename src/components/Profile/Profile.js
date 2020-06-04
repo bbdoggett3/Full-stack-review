@@ -1,11 +1,20 @@
-import React, { Component } from 'react';
+import React from "react";
+import Axios from "axios";
 
-class Profile extends Component {
-    render() {
-        return(
-            <div>This is the landing Profile</div>
-        )
+function Profile(props) {
+
+    const logout = () => {
+        Axios.delete('/auth/logout').then( () => {
+            props.history.push('/')
+        })
     }
+
+  return (
+    <div>
+      <p>This is the landing Profile</p>
+      <button onClick={ () => logout() }>Logout</button>
+    </div>
+  );
 }
 
 export default Profile;
