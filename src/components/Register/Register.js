@@ -30,7 +30,7 @@ class Register extends Component {
         this.props.history.push("/dashboard");
       })
       .catch((error) => {
-        alert("Could not log in");
+        alert(error.response.data, "Could not log in");
       });
   };
 

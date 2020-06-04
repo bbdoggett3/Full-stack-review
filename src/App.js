@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import AuthHeader from './components/AuthHeader/AuthHeader'
 
 function App(props) {
+  
   console.log('Look at me!', props)
   return (
     <div className="App">
