@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 import routes from './routes';
+import { connect } from 'react-redux';
 
-function App() {
+function App(props) {
+  console.log('Look at me!', props)
   return (
     <div className="App">
       <h1>This is Review Day</h1>
@@ -11,4 +13,7 @@ function App() {
   );
 }
 
-export default App;
+
+const mapStateToProps = reduxState => reduxState
+
+export default connect(mapStateToProps)(App)

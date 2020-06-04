@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
 
 class Dashboard extends Component {
     render() {
@@ -8,4 +9,5 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+const mapStateToProps = reduxState => reduxState
+export default connect(mapStateToProps)(Dashboard);
