@@ -3,6 +3,7 @@ const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
 const authCtrl = require('./controllers/authController');
+const postCtrl = require('./controllers/postController');
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
@@ -25,10 +26,10 @@ app.delete('/auth/logout', authCtrl.logout)
 app.get('/auth/user', authCtrl.getUser)
 
 //Post:
-// app.get('/api/posts')
-// app.post('/api/post')
-// app.put('/api/posts/:post_id')
-// app.delete('/api/posts/:post_id')
+app.get('/api/posts', postCtrl.getPost)
+app.post('/api/post', postCtrl.newPost)
+app.put('/api/posts/:post_id', postCtrl.editPost)
+app.delete('/api/posts/:post_id', postCtrl.removePost)
 
 massive({
     connectionString: CONNECTION_STRING,

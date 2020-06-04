@@ -12,7 +12,11 @@ class Dashboard extends Component {
 
     render() {
         return(
-            <div>This is the Dashboard</div>
+            <div>
+                <h2>Welcome to the Dashboard</h2>
+                <img src="https://www.loveyourdog.com/wp-content/uploads/2019/04/Beagles-900x500.jpg" alt="Beagle Dog"/>
+            </div>
+            
         )
     }
 }

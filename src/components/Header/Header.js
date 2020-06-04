@@ -6,7 +6,7 @@ const Header = props => {
         <nav>
             <h1>Header</h1>
             <div>
-                <Link to='/dashboard'>Dashboard</Link>
+                <Link to='/dashboard'>Dashboard</Link> <br/>
                 <Link to='/profile'>Profile</Link>
             </div>
         </nav>
